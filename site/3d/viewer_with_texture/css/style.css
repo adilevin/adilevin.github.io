@@ -1,0 +1,56 @@
+body {
+    font-family: Monospace;
+    background-color: #00f;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.stats {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+}
+
+#color-legend {
+    height: 30px;
+    width: 220px;
+    background-image: url('../img/legend.jpg');
+    background-size: cover;
+}
+
+#three-js-container {
+    border: 2px red solid;
+    width: 90%;
+    height: 80vh;
+    margin: 0px auto 0px auto;
+}
+
+#visibility_buttons {
+    margin: 5px 5%;
+}
+
+a { color: skyblue }
+.button { background:#999; color:#eee; padding:0.2em 0.5em; cursor:pointer }
+.highlight { background:orange; color:#fff; }
+
+span {
+    display: inline-block;
+    width: 60px;
+    float: left;
+    text-align: center;
+}
+
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
+}

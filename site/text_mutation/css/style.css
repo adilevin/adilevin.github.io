@@ -1,0 +1,30 @@
+body {
+    background-color:  #457915;
+}
+
+#trg {
+    visibility: inherit;
+}
+
+button {
+    margin-top: 50px;
+    font-size: 200%;
+}
+
+div {
+    text-align: center;
+    color:  white;
+    width:  600px;
+    margin: 50px auto;    
+}
+
+.word {
+    font-size:  300%;
+    width:  600px;
+    height: 200px;
+    margin: 0 auto;    
+}
+
+.relpos {
+    position: relative;
+}

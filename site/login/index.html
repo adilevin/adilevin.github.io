@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>User login</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                update_doc();
+            });
+            function update_doc() {
+                if (localStorage.username) {
+                    $("#hellouser").html("Hello " + localStorage.username +'!');
+                } else {
+                    $("#hellouser").html("Please enter your nickname:");
+                }
+            }
+            function on_change_username() {
+                var username = $("#username_input").val();
+                localStorage.username = username;
+                update_doc();
+            }      
+        </script>
+        <style>
+            .centered {
+                width:  600px;
+                font-size:  250%;
+                color:  white;
+                background-color: #0026ff;
+                text-align:  center;
+                height:  150px;
+                line-height:  150px;
+                vertical-align: middle;  
+                margin:  30px auto;                              
+            }
+            #username_input {
+                width:  150px;
+                font-size:  100%;
+            }
+        </style>
+    </head>
+    <body>
+        <br><br>
+        <div id="hellouser" class="centered"></span></div>
+        <div id="setusername" class="centered">
+        New nick name: <input id="username_input" type ="text" name="username" onchange="on_change_username();">
+        </div>
+    </body>
+</html>

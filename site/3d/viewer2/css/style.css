@@ -1,0 +1,45 @@
+body {
+    font-family: Monospace;
+    background-color: #444;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.webgl-container {
+    position: absolute;
+    top: 45px;
+    height: 80vh;
+    visibility: hidden;
+}
+
+.webgl-container > canvas
+{
+    border-radius: 20px;
+}
+
+#color-legend {
+    height: 30px;
+    width: 220px;
+    background-image: url('../img/legend.jpg');
+    background-size: cover;
+    display: none;
+}
+
+#lower_jaw_window {
+    width: 45.5%;
+    left: 3%;
+}
+
+#upper_jaw_window {
+    width: 45.5%;
+    right: 3%;
+}
+
+#bite_window {
+    width: 94%;
+    left: 3%;
+}
+
+#button_group {
+    margin: 5px 5%;
+}

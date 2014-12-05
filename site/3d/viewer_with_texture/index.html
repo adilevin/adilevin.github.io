@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>3D viewer</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+	</head>
+	<body id="body">
+
+        <div id="visibility_buttons">
+            <button id='lower_jaw_button' class="btn">Lower</button>
+            <button id='upper_jaw_button' class="btn">Upper</button>
+            <button id='occlusogram_button' class="btn btn-info">Occ</button>
+            <button id='color-legend' class="btn"></button>
+        </div>
+
+        <div id="three-js-container">
+        </div>
+
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/three.js/r69/three.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.min.js"></script>
+        <script src="js/TrackballControls.js"></script>
+		<script src="js/loaders/STLLoader.js"></script>
+        <script src="js/loaders/OBJLoader.js"></script>
+		<script src="js/loaders/ctm/lzma.js"></script>
+		<script src="js/loaders/ctm/ctm.js"></script>
+		<script src="js/loaders/ctm/CTMLoader.js"></script>
+		<script src="js/Detector.js"></script>
+        <script src="js/scene.js"></script>
+
+        <script>
+            createAllScenes({
+                'scenes': [{'name':'main','html_id':'three-js-container'}],
+                'objects': [{'name':'lower jaw','src':'models/orthoL.ctm'},
+                            {'name':'bridge','src':'models/orthoU.ctm'}],
+                'visibility_buttons':
+                            [{'html_id':'lower_jaw_button','object_name':'lower jaw','scene_name':'main'},
+                             {'html_id':'upper_jaw_button','object_name':'bridge','scene_name':'main'}]
+            })
+        </script>
+	</body>
+</html>

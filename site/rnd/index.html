@@ -1,0 +1,43 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.2.min.js"></script>
+        <script src="js/data.js"></script>
+        <script src="js/actions.js"></script>
+        <script src="../login/greeting.js"></script>
+    </head>
+    <body id="body">
+        <audio id="music" src="mp3/thinking.mp3"></audio>
+        <br>
+        <section class="centered_section">
+            <div id="counter_report">
+                <div id="counter"></div>
+                <div id="counter_label"> :ביקרו עד כה</div>
+            </div>
+        </section>
+        <section class="centered_section">
+            <br>
+            <div id="input_paragraph">
+                <button id="submit_btn" onclick="focus_on_input()" disabled>הוסף</button>
+                <input id="input" type="text" placeholder="הקלד אפשרות" onchange="append_item();" oninput="disable_enable_submit_btn();">
+            </div>
+        </section>
+        <section class="centered_section">
+            <ul id="list_of_items"></ul>
+        </section>
+        <section id="buttons_section" class="centered_section">
+            <p>
+                <button id="select_btn">בחר</button>
+                <button id="reset_btn">אפס</button>            
+                <button id="sort_btn">סדר</button>
+            </p>
+        </section>
+    </body>
+</html>

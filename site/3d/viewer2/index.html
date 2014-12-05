@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>3D viewer</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="stylesheet" href="css/circularG.css"/>
+        <script src="js/jquery-2.1.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+	</head>
+	<body id="body">
+
+        <div id="button_group">
+            <button id='layout_toggle' class="btn btn-warning">Layout</button>
+            <button id='lower_jaw_button' class="btn">Lower</button>
+            <button id='upper_jaw_button' class="btn">Upper</button>
+            <button id='occlusogram_button' class="btn btn-info">Occ</button>
+            <button id='color-legend' class="btn"></button>
+        </div>
+
+        <div id="lower_jaw_window" class="webgl-container"></div>
+        <div id="upper_jaw_window" class="webgl-container"></div>
+        <div id="bite_window" class="webgl-container"></div>
+
+
+        <script src="js/three.min.js"></script>
+        <script src="js/TrackballControls.js"></script>
+		<script src="js/loaders/STLLoader.js"></script>
+        <script src="js/loaders/OBJLoader.js"></script>
+		<script src="js/loaders/ctm/lzma.js"></script>
+		<script src="js/loaders/ctm/ctm.js"></script>
+		<script src="js/loaders/ctm/CTMLoader.js"></script>
+        <script src="js/Viewer3D.js"></script>
+        <script src="js/MyViewer3D.js"></script>
+
+        <script>
+            var viewer = new Viewer3D(
+                {
+                    windows3D: {
+                        lower_jaw_window: {
+                            camera: {'eye_pos': [0, 0, 200], 'up_vector': [1, 0, 0] },
+                            objects: { lower_jaw: {} }
+                        },
+                        upper_jaw_window: {
+                            camera: {'eye_pos': [0, 0, -200], 'up_vector': [-1, 0, 0] },
+                            objects: { upper_jaw: {} }
+                        },
+                        bite_window: {
+                            camera: {'eye_pos': [150, 0, 0], 'up_vector': [0, 0, 1] },
+                            objects: { lower_jaw: {}, upper_jaw: {} }
+                        }
+                    },
+                    objects : {
+                        lower_jaw : { url: 'models/orthoL.ctm' },
+                        upper_jaw : { url: 'models/orthoU.ctm' }
+                    },
+                    onLoadingCompleted : function() {
+                        activateToggleVisibilityButton('lower_jaw_button','lower_jaw');
+                        activateToggleVisibilityButton('upper_jaw_button','upper_jaw');
+                        $('.circularG_main_container').hide();
+                    }
+                }
+            );
+        </script>
+	</body>
+</html>
